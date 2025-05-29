@@ -8,7 +8,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
-DOCUMENT_ID = 'DOCUMENT ID GOES HERE'
+DOCUMENT_ID = '1ukXnWgSJnrHYmeysRgYUUT0a2l4QZ8uZG3I2TXFs59Y'
 SCOPES = ['https://www.googleapis.com/auth/documents','https://www.googleapis.com/auth/drive']
 dlp_settings = {'format': 'bestaudio/best', 'postprocessors': [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality': '320',}], 'outtmpl': '%(title)s.%(ext)s', 'noplaylist': True, 'quiet': True,}
 
