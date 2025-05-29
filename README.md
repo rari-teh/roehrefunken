@@ -25,7 +25,7 @@ This part is long and boring and annoying and Google Cloud Console is as nimble 
 5. Once that’s done, click on *Clients* on the side pane and create a new OAuth client ID. I recommend *RöhrePY* for the name. The application type should be desktop app.
 6. A popup will appear telling you the client was created. Click *Download JSON*, rename the file to `client_secret.json` and place it together with `rf.py`.
 7. Close the popup and click on *Data Access* on the side pane. Click on *Add or remove scopes* and check the scopes `.../auth/documents` and `.../auth/drive`. Click on *Update* and then *Save* down at the bottom.
-8. Finally, Click on *Audience* on the side pane and then on *Add users*. Enter the e-mail address of the Google ID whose Drive you’ll use to listen to YouTube through the limited connection.
+8. Finally, Click on *Audience* on the side pane and then on *Add users*. Enter the email address of the Google ID whose Drive you’ll use to listen to YouTube through the limited connection.
 
 ## First run
 Before anything else, you’ll need to edit the script to point at the Google document that will serve as your little console of sorts. Log onto the Google account you’ll use in your limited connection and create a new text document. Give it any title you want and let it autosave. Copy the document ID (the long alphanumeric string between `/document/d/` and `/edit` on the URL) and paste it in quotes inside `rf.py` on the indicated spot.
