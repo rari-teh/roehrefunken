@@ -35,13 +35,13 @@ if not badge or not badge.valid:
         badge = flow.run_local_server(port=0)
     with open('token.json', 'w') as token:
         token.write(badge.to_json())
+service_docs = build('docs', 'v1', credentials=badge)
+service_drive = build("drive", "v3", credentials=badge)
 state = "ready"
 print("Online.")
 
 while (True):
     try:
-        service_docs = build('docs', 'v1', credentials=badge)
-        service_drive = build("drive", "v3", credentials=badge)
         document = service_docs.documents().get(documentId=DOCUMENT_ID).execute()
         query = document.get("title")
         if query.endswith('$'):
