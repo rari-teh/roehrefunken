@@ -29,7 +29,11 @@ if os.path.exists('token.json'):
     badge = Credentials.from_authorized_user_file('token.json', SCOPES)
 if not badge or not badge.valid:
     if badge and badge.expired and badge.refresh_token:
-        badge.refresh(Request())
+        try:
+            badge.refresh(Request())
+        except:
+            flow = InstalledAppFlow.from_client_secrets_file('client_secret.json', SCOPES)
+            badge = flow.run_local_server(port=0)
     else:
         flow = InstalledAppFlow.from_client_secrets_file('client_secret.json', SCOPES)
         badge = flow.run_local_server(port=0)
